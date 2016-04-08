@@ -1,0 +1,234 @@
+The Real World Tutorials
+------------------------
+
+this is for authors who are contributing to the 'real world' series.
+
+It has a tone of 'do it my way', not because i'm an egomaniac, but because uniformity has benefits in computing. After we have a collection of 75 tutorials, everybody doing it their own way will become increasingly painful.
+
+Also, this contains much advice that is 'do as I say, not as I do'. That's because it's 'don't do what I did'.
+I've learned a lot making these tutorials.
+
+I'm collecting a series of tutorials on aspects of programming in SWI-Prolog.
+
+They share some important features:
+
+1. They share, or will as soon as I convert some of the old ones, a common format.
+This format is evolving, but is based on the asciidoc flavor of markdown. Eventually we will have a post-processor
+for the html emitted by asciidoc.
+The goal, ultimately, is a single source base that can be run through pipelines to produce interactive tutorial web pages, a printed book, or other formats.
+The long term goal is to turn the tutorials into a book, a 'Practical SWI-Prolog' type book.
+
+2. They are about *Programming in the large* in the *SWI-Prolog ecosystem*. That is, the student should know the basics of Prolog programming, come to the tutorial, and leave knowing how to actually do a task using the language. So, for example, the DCG tutorial covers not only the sort of theory covered in an academic class, but things you might actually need to know to parse a file, one of the most common tasks for which one would use a DCG.
+
+3. They are released under the SWI-Prolog license terms. 
+
+4. They are tutorials. They follow the usual conventions for instructional material, with exercises, preparation, and review.
+
+5. The model reader is a professional software engineer who has either no degree or a 4 year degree, and who has read Clocksin and Mellish, and who now wants to write large, real world software in SWI-Prolog. 
+
+6. Each tutorial should empower the student to do a "thing", a larger scale task, in SWI-Prolog - 'transform lists', 'web programming', 'implement a DSL', 'Work with modules', 'do literate coding', rather than a single library (eg 'produce properly documented code', not 'pldoc' - a 'documentation' tutorial could cover things like how to write a good README for example).
+It's fine to structure a tutorial around a project (often a good thing), but don't make your tutorial 'controlling a pancake maker with SWI-Prolog', instead make your tutorial 'interacting with other languages from SWI-Prolog' and make your example be the pancake maker controller.
+
+What 'Real World' tutorials are not -
+
+ * example projects (make a dating site in SWI-Prolog)
+ * theory  (if you're tempted to insert footnotes, you're probably not writing a real world tutorial).
+
+
+A piece of advice. Writing these things is time consuming. Don't start too big a project and never finish. Do something smaller than you think you can handle. The web framework tutorial has at least 100 hours in it.
+
+Besides the technical aspects of formatting, the content should follow this general outline:
+
+Outline
+=======
+
+1. Provide a title block, with TOC and other material, and a link to the parent directory. 
+
+2. Describe who should work this tutorial, "this tutorial is for advanced SWI-Prolog programmers who understand <topic> and want to do <task>.", what other material they need to understand first, as well as what tools they need (eg. a version of SWI-Prolog beyond xx, or the example programs that accompany the material).
+
+3. Provide an estimate of the time taken for the tutorial.
+
+4. Say how to use the tutorial. EG if your tutorial depends on running examples, say something like 'read each section, then open each example and run it, and make sure you understand the code' or whatever's relevant.
+In some of my tutorials I refer to the example programs frequently, but do NOT have them listed in the source text.
+This pretty much forces the student to have the program open.
+
+5. Motivate the material. Explain why it's useful or important.
+
+6. Review any background needed
+
+7. The tutorial body - 
+This should be *task* oriented. This is how to deal with sessions, this is how to do authentication. 
+
+Each task should provide exercises at the end that show competency with that task.
+
+Each section of the tutorial should teach one concept, usually how to do one task. Often, explaining why the system is designed as it 
+
+If your tutorial grows large, consider dividing it. The web framework tutorial is a bit past this limit at the moment.
+
+If you have major sections, consider a larger 'project' exercise at the end, and/or a review.
+Remember, your job is NOT just to present the material, but to get the student to understand it. You need to operate 'closed loop'.
+
+Every technical term and concept that's used should be introduced beforehand. You will have a lattice of 'prerequisite' dependencies.
+
+8. Write a conclusion - remind students of the main points. 
+
+9. Thank the student for taking the tutorial. Ask the student to send feedback if something is unclear in the tutorial. Include both my email and your own.
+
+10. Thank those who helped produce the tutorial.
+
+
+The Writing Process
+===================
+
+1. Check in with me with roughly what you'll be covering, so we can coordinate
+
+2. Make an outline. Contact me, we'll make a new repo for it in my github.
+
+3. Research - I've never found a section I knew well enough to write a tutorial for from scratch. This is time consuming. Be prepared to spend lots of time writing test programs and reading docs. If your tutorial concentrates on one or several libraries, write examples for every predicate in the library.
+Now, after all that work, avoid the temptation to tell all of it to the student. Figure out what's actually useful and what's truly details. A diligent student should NOT end the tutorial knowing as much as you do about the subject.
+
+3. Write the actual tutorial and the example files.
+I usually start in Word, then transfer to the asciidoc file when the outline is unlikely to change.
+Work all your own exercises.
+
+4. Have me edit it for voice.
+
+5. Test it - we can put it up and recruit a few people to use it. This usually results in lots of errors and unclear places being discovered. Fix them.
+
+6. I usually pass it by Jan then. He often has insights into the design of things, or catches subtle points.
+
+7. Once it's released, there's a slow process of fixing things as they're spotted, or as users ask questions.
+
+
+Tips on language
+================
+
+Avoid a boosterish tone. Saying something is cool is fine if it actually is, but remember your task is to teach, not convince.
+
+Imitate me. When choosing your wording and tone, consider imitating me. Realistically, I'll probably be the main person writing these for some time, and so my 'voice' is the default one. Students find it jangling when the 'voice' changes from chapter to chapter, and we'll want these tutorials to integrate some day.
+
+Be OK with editing. I do reserve the right to edit your stuff. I usually restrict it to helping fix points of confusion, and changing a few things to sound like me.
+
+Consider graphics. I have modest graphic arts skills and will be happy to help. The cartoon figures and silly clip art give visual references in a sea of text. Students will scroll back and forth looking for information.
+If you're doing something interactive, then video might be appropriate.
+
+A little levity is useful, but don't go overboard.
+
+Suggest where the student will need certain knowledge. For example, the web tutorial has a cartoon of a guy in comfortable clothes (pyjamas), and the admonition 'if you never got comfortable with DCG's, do do so now. Welcome back'
+
+
+Avoid simply restating the documentation. Do not attempt to replace the documentation. Freely admit when the documentation is lacking, and supplement it if you will.
+
+You are NOT writing documentation. You have no obligation to be complete or authoritative. Your task is to provide the student with tools, not to explicate the system. That's the job of the official SWI-Prolog documentation.
+
+Conversely, you may need to go through some predicates and say 'this predicate is for this'. That's fine.
+
+Remember that this is about Programming in the large. If things are obvious from the documentation, say so.
+
+Don't be afraid to be wrong. No one knows these systems completely, and every one of these tutorials is going to cover new ground. So conversely, if somebody points out a mistake, treat it as further exploration of the realm, not as a personal failing.
+
+[TIP]
+It's a good practice to provide 'advice' rather than factual information in tip sections like this. (Look at this file in a text editor to see how to format it).
+
+
+
+Building
+========
+
+The current build system is dead simple. 
+
+If you feel the call to improve it, feel free.
+
+You'll need to install asciidoc.
+
+I work on these on Windows, so there's a make.bat file in the directory with the tutorial. It has absolute path names. It's actually a call to asciidoc, so you can use the command unaltered other than path names on linux.
+
+You edit the file foo.txt, where foo is the name of your tutorial
+
+Running it generates a file, foo.html
+
+To deploy, you just upload.
+
+On my to do list is writing a utility that runs after asciidoc and patches up the generated html, so we can do SWISH things and fix an annoyance - I use alt text for mouseover 'funnies' to increase engagement, and it doesn't show up in some browsers.
+
+Formatting
+==========
+
+The simplest way to get the formatting right is to start with an existing tutorial.
+
+Most of the formatting is just 'use asciidoc'. 
+
+Retain the block at the head, including the auto-generated table of contents.
+
+We depend on the heading levels. Use them to organize your tutorial. That way we can integrate in future.
+
+
+How to insert code
+
+
+----------------------------
+:- use_module(library(clpfd)).
+----------------------------
+
+How to annotate a block of code
+
+
+------------------------
+:- use_module(library(clpfd)).         <1>
+
+test(X, Y) :-
+    X in 0..10,     <2>
+	Y in 4..8,      <3>
+	X #> Y.         <4>
+	 
+
+14 ?- test(X, Y).
+X in 5..10,           <5>
+Y#=<X+ -1,     <6>
+Y in 4..8.
+-------------------------
+
+<1> include the clp(fd) library
+<2> constrain X to be in 0 through 10 using the 'in' operator
+<3> constrain Y to be in 4 through 8 using the 'in' operator
+<4> constrain X to be greater than Y using the '#>' operator
+<5> X is now constrained to 5 through 10
+<6> Y is now constrained to be =< X - 1 (same as X > Y), and in the range 4 through 8.
+
+
+An exercise.
+Name, do not number exercises
+
+.backtracking Exercise
+************
+
+------------
+:- use_module(library(clpfd)).
+
+foo(X) :- X in 1..3 .
+foo(X) :- X in 5..7 .
+foo(X) :- X in 8..12 .
+------------
+
+What will happen if you query foo(X) and get all the solutions by backtracking?
+Predict what will happen, and then try it. Was your prediction correct?
+
+************* 
+
+[TIP]
+This is how to provide an advice box.
+
+Predicates like +member/2+ or +open(+FileName, +mode, -Stream)+ are surrounded with +  signs
+
+Technical terms like _doodoohead_ have underscores around them.
+
+A final note. 
+I'm mostly the person who works on these, and I work on windows, so please don't grouse too loudly about the windows line endings in files.
+
+
+
+
+
+
+
+

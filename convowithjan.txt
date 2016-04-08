@@ -1,0 +1,64 @@
+On 12/31/2015 02:36 AM, 'Anne Ogborn' via SWI-Prolog wrote:
+> There are a number of tutorials I've been meaning to add for a while,
+> and I'm finally adding some of them.
+
+Great! I like the new web one. There are some mistakes, which I hope to
+give you as a pull request when I find the time. I have the impression
+that the learning curve is a bit steep, notably at the start. Do you
+agree? If so, should that be fixed by making this tutorial longer or
+writing another one that just ignores all the hard stuff. In other
+words, the good thing about the tutorial is that once you understand it
+you will really be able to write fairly advanced servers without getting
+stuck. The danger is that people get scared away by the hard stuff while
+you can write serious servers without ever running into the hard stuff.
+
+
+> I've got a tutorial on quasiquotes, but it doesn't feel like it's
+> quite big enough to stand on it's own, so I'm thinking of expanding
+> it to a tutorial on options for creating a DSL in SWI-Prolog. Here's
+> ways of making a DSL that I've thought of:
+>
+> * quasiquotes
+> * term_expansion
+> * operators
+> * using Prolog terms for syntax but interpreting with different semantics
+>  (eg html//1)
+> * reading the DSL language from file with a DCG.
+>
+> Am I missing any?
+>
+> Is there anything else I should cover in such a tutorial?
+
+
+It would be a useful tutorial. Quite a challenge though. You surely miss
+goal_expansion/2. Your "using Prolog terms for syntax but interpreting
+with different semantics (eg html//1)" is just the definition of a DSL,
+no?  As I see it, there are two forms of language integration:
+
+  - Integrating existing other languages such as SQL, HTML, JavaScript,
+    R, etc.  Nicos and I wrote some stuff about that, which lead to the
+    SWI7 extensions.
+  - Solving a complicated problem, typically one that involves a lot of
+    modelling.  I.e., this isn't about the zebra puzzle or SEND+MORE=MONEY.
+    As opposed to integrating an existing language, you are now free to
+    define your own syntax.  The overall approach is
+
+    - Identify the structure of the problem and a suitable modelling
+      language for it without considering computability.
+    - Define a syntax that make this modelling natural.
+    - Model your problem.
+    - Solve it.  This typically has three stages:
+      - Simply use the model as data to compute a solution/...
+      - Transform the model such that the above becomes easier to do
+      - Compile the model to Prolog code.
+
+    The typical, fairly simple, example are DCGs.  I think you can also
+    consider CHR to be such a language.  Both are fairly general.  If
+    you have a hard enough problem it becomes worthwhile.
+
+I'm not sure "reading the DSL language from file with a DCG" belongs
+here. There is enough about DCGs. Although, is there a text that deals
+with using DCGs for real parsing, considering performance and generating
+sensible syntax error messages?
+
+    Cheers --- Jan
